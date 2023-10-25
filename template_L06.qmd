@@ -121,7 +121,7 @@ YOUR SOLUTION HERE
 ### Exercise 7
 
 a. For each destination, compute the total minutes of delay. 
-b. For each flight, compute the proportion of the total delay for its destination.
+b. For each flight number, compute the proportion of the total delay for its destination.
 
 ::: {.callout-tip icon="false"}
 ## Solution
