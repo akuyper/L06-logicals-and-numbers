@@ -1,19 +1,25 @@
 ---
 title: "L06 Logicals and Numbers"
 subtitle: "Data Science 1 with R (STAT 301-1)"
-aauthor: "YOUR NAME"
+author: "YOUR NAME"
+pagetitle: "L06 YOUR NAME"
+date: today
 
 format:
   html:
     toc: true
+    toc-depth: 4
+    toc-location: left
     embed-resources: true
-    code-fold: show
+    code-fold: false
     link-external-newwindow: true
 
 execute:
   warning: false
-  
-from: markdown+emoji 
+
+from: markdown+emoji
+reference-location: margin
+citation-location: margin  
 ---
 
 ::: {.callout-tip icon=false}
@@ -28,7 +34,7 @@ To link to your github **repo**sitory, appropriately edit the example link below
 
 ## Overview
 
-The goal of this lab is to explore practice using two important variable types that you'll encounter inside data frames: logicals and numerics vectors. Logicals are the simplest types of vectors, but are extremely powerful. It's relatively rare to find logical vectors in your raw data, but you’ll create and manipulate them in the course of almost every analysis. Numerics are the backbone of data science and is the type of data type that most think of when it comes to data science. 
+The goal of this lab is to explore and practice using two important variable types that you'll encounter when working with data: logical and numeric vectors. Logicals are the simplest type of vectors, but are extremely powerful. It's relatively rare to find logical vectors in your raw data, but you’ll create and manipulate them in the course of almost every analysis. Numerics are the backbone of data science and represents the data type that most think of when it comes to data science. 
 
 ## Load packages
 
@@ -44,7 +50,7 @@ You should always begin by loading all necessary packages towards the beginning 
 
 ## Datasets 
 
-This lab utilizes the `flights` datasets contained in the `nycflights13` package. Documentation/codebook can be accessed with `?flights`, provided you have installed and loaded `nycflights13` and `tidyverse` in your current R session. You'll also need the `college_rankings.csv`^[This dataset was sourced from [College Scorecard](https://collegescorecard.ed.gov/data) and [Times Higher Education](https://www.timeshighereducation.com/rankings/united-states/2022#!/length/-1/sort_by/rank/sort_order/asc/cols/scores)] data file for the case study. The data and codebook is contained in the `data/` subdirectory.    
+This lab utilizes the `flights` datasets contained in the `nycflights13` package. Documentation/codebook can be accessed with `?flights`, provided you have installed and loaded `nycflights13` in your current R session. You'll also need the `college_rankings.csv`^[This dataset was sourced from [College Scorecard](https://collegescorecard.ed.gov/data) and [Times Higher Education](https://www.timeshighereducation.com/rankings/united-states/2022#!/length/-1/sort_by/rank/sort_order/asc/cols/scores)] data file for the case study. The data and codebook is contained in the `data/` subdirectory.    
 
 ## Exercises
 
@@ -61,7 +67,7 @@ YOUR SOLUTION HERE
 
 ### Exercise 2
 
-Find all flights where `arr_delay` is missing but `dep_delay` is not. Find all flights where neither `arr_time` nor `sched_arr_time` is missing, but `arr_delay` is.
+Find all flights where `arr_delay` is missing, but `dep_delay` is not. Also, find all flights where neither `arr_time` nor `sched_arr_time` is missing, but `arr_delay` is.
 
 ::: {.callout-tip icon="false"}
 ## Solution
@@ -121,7 +127,7 @@ YOUR SOLUTION HERE
 ### Exercise 7
 
 a. For each destination, compute the total minutes of delay. 
-b. For each flight number, compute the proportion of the total delay for its destination.
+b. For each flight, compute the proportion of the total delay for each of its destinations.
 
 ::: {.callout-tip icon="false"}
 ## Solution
@@ -133,10 +139,16 @@ YOUR SOLUTION HERE
 
 ## Case Study
 
+::: {.callout-warning}
+
+The work for this case study is not aimed at producing something for a boss. It is aimed at practicing the with logicals and numerics. Therefore, providing and displaying code is expected. Raw tibble output is acceptable (meaning, you do not need to use `kable()` to make tables).
+
+:::
+
 Use the `college_rankings` file in the `data/` subdirectory to complete the tasks below. Code should be visible and output should be displayed in a way to clearly demonstrate the task's objective.
 
 - Use `case_when()` to define each observation as either "Midwest", "Northeast", "South", or "West" as defined by the US Census Bureau. Call this new variable `region`.
-- Use an `ifelse` statement to change the `public` variable to be `TRUE` if it is public and `FALSE` if it is not.
+- Use `if_else()` to change the `public` variable to be `TRUE` if it is public and `FALSE` if it is not.
 - Use the `cut` function to categorize the `overall_score` into bins spanning increments of 10.
 - Round `tuition_fees` to the nearest $1,000.
 
@@ -156,7 +168,7 @@ Graduate students are required to complete this challenge. **It is optional for 
 
 :::
 
-Provide appropriate support visualizations or tables to help support the answer to each of the questions below. Code can be hidden, but visualizations and tables are expected to be nicely formatted.
+Provide appropriate visualizations or tables to help support the answer to each of the questions below. Code can be hidden, but visualizations and tables are expected to be nicely formatted.
 
 - Which region has the highest average `tuition_fees`?
 - Which region has the highest variation in `tuition_fees`?

@@ -1,9 +1,9 @@
-# L06 - logicals and numbers ----
+# L06: logicals and numbers ----
 # Stat 301-1
 
-## load packages ----
+# load packages ----
 
 
-## Exercises ----
+# Exercises ----
 
-### Ex 1 ----
+## Ex 1 ----
